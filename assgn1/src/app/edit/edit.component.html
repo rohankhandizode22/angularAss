@@ -1,0 +1,100 @@
+<style>
+  .container {
+    padding-left: 400px;
+    padding-right: 400px;
+    margin-top: 50px
+  }
+
+  .d1 {
+    background-color: antiquewhite;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 22px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+
+  .formc {
+    margin-top: 30px;
+    border-radius: 52px;
+  }
+</style>
+
+
+<div class="container">
+  <div class="formc">
+
+    <div class="d1">
+      <h2> Edit Product</h2>
+      <form [formGroup]="addForm" (ngSubmit)="updatedata()">
+        <div class="form-group">
+          <label> Name</label>
+          <input type="text" name="name" [(ngModel)]="myData.name" class="form-control" formControlName="name" />
+          <!-- <div class="alert alert-danger" *ngIf="fdata['name'].invalid && fdata['name'].touched">
+            <div *ngIf="fdata['name'].errors && fdata['name'].errors['required']">
+              Full Name is required
+            </div>
+            <div *ngIf="fdata['name'].errors && fdata['name'].errors['pattern']">
+              Only alphabte allow
+            </div>
+          </div> -->
+        </div>
+
+        <div class="form-group">
+          <label> Quantity</label>
+          <input type="number" name="quantity" [(ngModel)]="myData.quantity" class="form-control" formControlName="quantity" />
+          <!-- <div class="alert alert-danger" *ngIf="fdata['quantity'].invalid && fdata['quantity'].touched">
+            <div *ngIf="fdata['quantity'].errors && fdata['quantity'].errors['required']">
+              Quantity is required
+            </div>
+          </div> -->
+        </div>
+
+        <div class="form-group">
+          <label> Price</label>
+          <input type="number" name="price" [(ngModel)]="myData.price" class="form-control" formControlName="price" />
+          <!-- <div class="alert alert-danger" *ngIf="fdata['price'].invalid && fdata['price'].touched">
+            <div *ngIf="fdata['price'].errors && fdata['price'].errors['required']">
+              Price is required
+            </div>
+            <div *ngIf="fdata['price'].errors && fdata['price'].errors['pattern']">
+              Only numbers are allowed
+            </div>
+          </div> -->
+        </div>
+
+        <div class="form-group">
+          <label> Image URL</label>
+          <input type="url" name="img" [(ngModel)]="myData.img" class="form-control" formControlName="img" />
+          <!-- <div class="alert alert-danger" *ngIf="fdata['img'].invalid && fdata['img'].touched">
+            <div *ngIf="fdata['img'].errors && fdata['img'].errors['required']">
+              Image URL is required
+            </div>
+          </div> -->
+        </div>
+
+
+        <div class="form-group">
+          <label>Description</label>
+          <input type="text" name="desc" [(ngModel)]="myData.desc" class="form-control" formControlName="desc" /><br>
+          <!-- <div class="alert alert-danger" *ngIf="fdata['desc'].invalid && fdata['desc'].touched">
+            <div *ngIf="fdata['desc'].errors && fdata['desc'].errors['required']">
+              Description is required
+            </div>
+
+          </div> -->
+        </div>
+        
+        <br>
+   
+        <input type="submit" value="Update" class="btn btn-success" [disabled]="addForm.invalid" style="text-align: center;" />
+        <br>
+        <br>
+        <a class="btn btn-success" [routerLink]="['home']" style="text-align: center;">Back</a>
+     
+      </form>
+    </div>
+  </div>
+</div>

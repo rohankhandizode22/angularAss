@@ -1,0 +1,25 @@
+<style>
+    .container {
+        padding-left: 300px;
+        padding-right: 300px;
+        margin-top: 50px;
+    }
+</style>
+
+<div class="container">
+    <div class="card text-center">
+        <div class="card-header">
+           <h1> More Details About The Products</h1>
+        </div>
+        <div class="card-body">
+            <h1 class="card-title">{{myData.name}}</h1>
+            <img src="{{myData.img}}" style="height:200px;width:200px;" />
+            <h2 class="card-text"> <b>Price:</b>  &#8377; {{myData.price}}</h2>
+            <h2 class="card-text">Qty: {{myData.quantity}}</h2>
+            <h2 class="card-text">Description: {{myData.desc}}</h2>
+        </div>
+    
+    </div>
+    <br>
+    <button><a class="btn btn success" routerLink="/">Go Back</a></button>
+</div>
